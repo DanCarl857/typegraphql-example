@@ -1,12 +1,21 @@
 {
-    "name": "default",
-    "type": "postgresql",
+    "type": "mongodb",
     "host": "localhost",
-    "port": 5432,
-    "username": "postgres",
-    "password": "postgres",
-    "database": "typegraphql-example",
+    "database": "test",
     "synchronize": true,
-    "logging": true,
-    "entities": ["src/entity/*.*"]
-}
+    "logging": false,
+    "entities": [
+      "src/entity/*.*"
+    ],
+    "subscribers": [
+      "src/subscriber/*.js"
+    ],
+    "migrations": [
+      "src/migration/*.js"
+    ],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  }
